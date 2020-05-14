@@ -1,0 +1,9 @@
+(require 'usocket)
+(defun create-server (ipaddr portno)
+  (usocket:with-socket-listener (socket ipaddr portno)
+    (usocket:wait-for-input)
+  (connection (usocket:socket-accept socket :element-type 'character)))
+  (usocket:with-server-socket (var socket)
+	    (format (usocket:socket-stream connection) "Hello World~%")
+	    (force-output (usocket:socket-stream connection)))))
+
