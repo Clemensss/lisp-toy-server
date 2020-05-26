@@ -1,0 +1,31 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+*http-200-ok*	main.lisp	/^(defparameter *http-200-ok* "HTTP\/1.1 200 OK")$/;"	f
+*http-400-bad-request*	main.lisp	/^(defparameter *http-400-bad-request* "HTTP\/1.1 400 Bad Request")$/;"	f
+*http-404-not-found*	main.lisp	/^(defparameter *http-404-not-found* "HTTP\/1.1 404 Not Found")$/;"	f
+HEY YALL	base.html	/^<h1> HEY YALL <\/h1>$/;"	h
+add-route	main.lisp	/^(defgeneric add-route(obj rule view)$/;"	f
+add-route	main.lisp	/^(defmethod add-route((app-obj app) rule view)$/;"	f
+app	main.lisp	/^(defclass app ()$/;"	f
+exec-view	main.lisp	/^(defgeneric exec-view (app request)$/;"	f
+exec-view	main.lisp	/^(defmethod exec-view ((app-obj app) (request-obj request))$/;"	f
+get-view	main.lisp	/^(defgeneric get-view(obj rule)$/;"	f
+get-view	main.lisp	/^(defmethod get-view((app-obj app) rule)$/;"	f
+lisp-toy-frame-work	README.md	/^# lisp-toy-frame-work$/;"	c
+localhost	main.lisp	/^(defconstant localhost "127.0.0.1")$/;"	f
+parse-request	main.lisp	/^(defgeneric parse-request (obj http-str)$/;"	f
+parse-request	main.lisp	/^(defmethod parse-request((request-obj request) request)$/;"	f
+render-template	main.lisp	/^(defun render-template (file)$/;"	f
+reponse-string	main.lisp	/^(defgeneric reponse-string (obj)$/;"	f
+reponse-string	main.lisp	/^(defmethod reponse-string ((response-obj response))$/;"	f
+request	main.lisp	/^(defclass request ()$/;"	f
+response	main.lisp	/^(defclass response ()$/;"	f
+root-view	main.lisp	/^(defun root-view (request)$/;"	f
+run-server	main.lisp	/^(defun run-server (app ipaddr portno)$/;"	f
+server-output	main.lisp	/^(defun server-output (connection message)$/;"	f
