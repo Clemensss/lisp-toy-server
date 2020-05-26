@@ -8,9 +8,8 @@
   (:documentation "creates rule for view"))
 (defgeneric get-view(obj rule)
   (:documentation "returns associated procedure with rule"))
-
-(defgeneric parse-request (obj request)
-  (:documentation "parses request and returns a request obj"))
+(defgeneric make-http (obj http-str)
+  (:documentation "parses http and returns a request obj"))
 
 ;;TODO a bunch of shit
 
@@ -25,7 +24,6 @@
 
 (defmethod get-view((app-obj app) rule)
   (assoc 'rule (slot-value app-obj 'views)))
-
 
 (defun exec-view (app-obj request-obj)
   "executes view procedure and passes 
@@ -50,7 +48,7 @@
     :initarg :content
     :initform nil)))
 
-(defmethod parse-request ((request-obj request) request)
+(defmethod make-http ((request-obj request) request)
   (format t "~a~%" request)
 
   (let ((request-list (cl-ppcre:split "\\s" request)))
@@ -68,14 +66,13 @@
     :initarg :content
     :initform nil)))
 
-
 (defun run-server (app ipaddr portno)
   (usocket:with-socket-listener (socket ipaddr portno)
     (usocket:wait-for-input socket)
 	(let* ((connection (usocket:socket-accept socket))
 	       (request (read-line (usocket:socket-stream connection)))
 	       (request-obj (make-instance 'request)))
-	(parse-request request-obj request)
+	(make-http request-obj request)
 	(exec-view app request-obj))))
 
 ;; outputs into the server
